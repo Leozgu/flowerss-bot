@@ -8,11 +8,9 @@ import (
 	"time"
 )
 
-var （
-bitLink = "https://t.me/Bitczx"
-bitTitle = "币快讯"
-tigTitle = "Tiger"
-）
+bitLink := "https://t.me/Bitczx"
+bitTitle := "币快讯"
+tigTitle := "Tiger"
 
 func PublishHtml(bitTitle string, title string, bitLink string, htmlContent string) (string, error) {
 	//html = fmt.Sprintf(
