@@ -8,21 +8,23 @@ import (
 	"time"
 )
 
+var bicLink = "https://t.me/Bitczx"
+
 func PublishHtml(sourceTitle string, title string, rawLink string, htmlContent string) (string, error) {
 	//html = fmt.Sprintf(
-	//	"<p>本文章由 <a href=\"https://github.com/leozgu/flowerss-bot\">flowerss</a> 抓取自RSS，版权归<a href=\"\">源站点</a>所有。</p><hr>",
+	//	"<p>本文章由 <a href=\"https://github.com/indes/flowerss-bot\">flowerss</a> 抓取自RSS，版权归<a href=\"\">源站点</a>所有。</p><hr>",
 	//) + html + fmt.Sprintf(
-	//	"<hr><p>本文章由 <a href=\"https://github.com/leozgu/flowerss-bot\">flowerss</a> 抓取自RSS，版权归<a href=\"\">源站点</a>所有。</p><p>查看原文：<a href=\"%s\">%s - %s</p>",
+	//	"<hr><p>本文章由 <a href=\"https://github.com/indes/flowerss-bot\">flowerss</a> 抓取自RSS，版权归<a href=\"\">源站点</a>所有。</p><p>查看原文：<a href=\"%s\">%s - %s</p>",
 	//	rawLink,
 	//	title,
 	//	sourceTitle,
 	//)
 
 	htmlContent = html.UnescapeString(htmlContent) + fmt.Sprintf(
-		"<hr><p><a href=\"https://t.me/Bitczx\"><h1>更多内容</h1></a></p>",
-		rawLink,
+		"<hr><p><a href=\"https://t.me/Bitczx\"><h1>更多内容</h1></a><br/><a href=\"\">.</a></p><p>.<a href=\"%s\">%s</p>",
+		bicLink,
 		title,
-		sourceTitle,
+	//	sourceTitle,
 	)
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
 	client := clientPool[rand.Intn(len(clientPool))]
