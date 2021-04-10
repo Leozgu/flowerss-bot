@@ -75,7 +75,7 @@ const (
 {{.PreviewText}}
 -----------------------------
 {{- end}}{{if .EnableTelegraph}}
-{{.ContentTitle}} <a href="{{.TelegraphURL}}">Telegraph</a> | <a href="{{.RawLink}}">原文</a>
+{{.ContentTitle}} <a href="{{.TelegraphURL}}">Telegraph</a>
 {{- else }}
 <a href="{{.RawLink}}">{{.ContentTitle}}</a>
 {{- end }}
