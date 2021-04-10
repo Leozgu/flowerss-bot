@@ -7,13 +7,13 @@ import (
 	"math/rand"
 	"time"
 )
-
-
-
-func PublishHtml(bitTitle string, title string, bitLink string, htmlContent string) (string, error) {
+var(
 	bitLink := "https://t.me/Bitczx"
 	bitTitle := "币快讯"
 	tigTitle := "Tiger"
+)
+
+func PublishHtml(bitTitle string, title string, bitLink string, htmlContent string) (string, error) {
 	//html = fmt.Sprintf(
 	//	"<p>本文章由 <a href=\"https://github.com/indes/flowerss-bot\">flowerss</a> 抓取自RSS，版权归<a href=\"\">源站点</a>所有。</p><hr>",
 	//) + html + fmt.Sprintf(
