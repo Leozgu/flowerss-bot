@@ -21,7 +21,7 @@ func PublishHtml(sourceTitle string, title string, rawLink string, htmlContent s
 	//)
 
 	htmlContent = html.UnescapeString(htmlContent) + fmt.Sprintf(
-		"<hr><p><a href=\"https://t.me/Bitczx\"><h1>更多内容</h1></a><br/><a href=\"\">.</a></p><p>.<a href=\"%s\">%s</p>",
+		"<hr><p><a href=\"https://t.me/Bitczx\"><h1>更多内容</h1></a><br/</p><p><a href=\"%s\">%s</p>",
 		bitLink,
 		title,
 	//	sourceTitle,
