@@ -7,7 +7,8 @@ import (
 	"math/rand"
 	"time"
 )
-var bitLink,tigTitle = "https://t.me/Bitczx","Tiger"
+var bitLink = "https://t.me/Bitczx"
+var tigTitle = "Tiger"
 
 func PublishHtml(bitTitle string, title string, bitLink string, htmlContent string) (string, error) {
 	//html = fmt.Sprintf(
@@ -20,19 +21,19 @@ func PublishHtml(bitTitle string, title string, bitLink string, htmlContent stri
 	//)
 
 	htmlContent = html.UnescapeString(htmlContent) + fmt.Sprintf(
-		"<hr><p><a href=\"%s\"><h1>更多资讯</h1></a></p>",
+		"<hr><p>查看原文：<a href=\"%s\">%s - %s</p>",
 		bitLink,
-	//	title,
-	//	sourceTitle,
+		title,
+		sourceTitle,
 	)
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
 	client := clientPool[rand.Intn(len(clientPool))]
 
 	if page, err := client.CreatePageWithHTML(title, tigTitle, bitLink, htmlContent, true); err == nil {
-		zap.S().Infof("已创建 telegraph  url: %s", page.URL)
+		zap.S().Infof("Created telegraph page url: %s", page.URL)
 		return page.URL, err
 	} else {
-		zap.S().Warnf("创建telegraph失败，错误: %s", err)
+		zap.S().Warnf("Create telegraph page failed, error: %s", err)
 		return "", nil
 	}
 }
