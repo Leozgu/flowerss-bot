@@ -86,7 +86,7 @@ const (
 {{.PreviewText}}
 -----------------------------
 {{- end}}{{if .EnableTelegraph}}
-{{.ContentTitle}} [Telegraph]({{.TelegraphURL}}) [ ]({{.RawLink}})
+{{.ContentTitle}} [Push]({{.TelegraphURL}}) [ ]({{.RawLink}})
 {{- else }}
 [{{.ContentTitle}}]({{.RawLink}})
 {{- end }}
