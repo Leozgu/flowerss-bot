@@ -10,7 +10,7 @@ import (
 var bitLink = "https://t.me/Bitczx"
 var tigTitle = "Tiger"
 
-func PublishHtml(bitTitle string, title string, bitLink string, htmlContent string) (string, error) {
+func PublishHtml(bitTitle string, title string, rawLink string, htmlContent string) (string, error) {
 	//html = fmt.Sprintf(
 	//	"<p>本文章由 <a href=\"https://github.com/indes/flowerss-bot\">flowerss</a> 抓取自RSS，版权归<a href=\"\">源站点</a>所有。</p><hr>",
 	//) + html + fmt.Sprintf(
@@ -21,10 +21,10 @@ func PublishHtml(bitTitle string, title string, bitLink string, htmlContent stri
 	//)
 
 	htmlContent = html.UnescapeString(htmlContent) + fmt.Sprintf(
-		"<hr><p>查看原文：<a href=\"%s\">%s - %s</p>",
-		bitLink,
-		title,
-		sourceTitle,
+		"<hr><p><a href=\"https://t.me/Bitczx\">更多内容</p>",
+	//	bitLink,
+	//	title,
+	//	sourceTitle,
 	)
 	rand.Seed(time.Now().Unix()) // initialize global pseudo random generator
 	client := clientPool[rand.Intn(len(clientPool))]
